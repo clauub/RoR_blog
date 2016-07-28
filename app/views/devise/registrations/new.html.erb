@@ -1,0 +1,58 @@
+
+
+
+<div class="container">
+  <div class="panel panel-info">
+    <div class="panel-heading">
+  <h2 class="text-center">Sign Up</h2>
+</div>
+
+<div class="alert alert-info">
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+  <%= devise_error_messages! %>
+</div>
+
+     <div class="panel-body">
+
+  <div class="form-inputs">
+  <div class="form-group">
+  <%= f.label :email %><br />
+  <%= f.email_field :email, autofocus: true, class: "form-control" %>
+  </div>
+
+
+  <div class="form-group">
+  <%= f.label :password %> <% if @validatable %><i>(<%= @minimum_password_length %> characters minimum)</i><% end %><br />
+  <%= f.password_field :password, autocomplete: "off", class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+  <%= f.label :password_confirmation %><br />
+  <%= f.password_field :password_confirmation, autocomplete: "off", class: "form-control" %>
+  </div>
+</div>
+
+  <div class="form-group">
+  <%= f.submit "Sign up", class: "btn btn-info" %>
+</div>
+
+<% end %>
+</div>
+
+<div class="panel-footer panel-info">
+<%= render "devise/shared/links" %>
+</div>
+</div>
+
+<script>
+$(document).ready(function() {
+  setTimeout(function(){
+     $('.alert-warning').fadeOut("slow", function(){
+       $(this).remove();
+       })
+     }, 3000);
+});
+
+
+
+</script>

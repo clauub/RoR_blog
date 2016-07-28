@@ -1,0 +1,12 @@
+<% @posts.each do |post| %>
+<div class="container">
+  <div class="panel panel-default" style="margin-top: 1em;">
+  <div class="panel-body">
+
+   <h2><%= link_to post.title, post %></h2>
+   <blockquote><%= post.created_at.strftime("%B, %d, %Y") %></blockquote>
+   <%= link_to 'Read More', post, class:"fa fa-plus btn btn-danger" %>
+</div>
+</div>
+</div>
+<% end %>
